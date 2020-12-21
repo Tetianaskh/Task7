@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Task7 {
 
     // Основные задачи:
@@ -16,31 +18,47 @@ public class Task7 {
      * удалить этот элемент из массива.
      * После вывести список вновь
      */
-
     public static void exercise01() {
 
     }
 
+//    public static int maxElement(int array, int element) {
+//
+//    }
     /**
-     * Задача 2. Написать метод, который принимает масиив целых чисел и возвращает значение максимального элемента
+     * Задача 2. Написать метод, который принимает массив целых чисел и возвращает значение максимального элемента
      */
-
     public static void exercise02() {
-
+        int[] array = new int[15];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random()*100);
+        }
+        System.out.println(Arrays.toString(array));
     }
 
+//    public static int minElementIndex(int array, int element) {
+//
+//    }
     /**
      * Задача 3. Написать метод, который пригнимает массив целых чисел и возвращает индекс минимального элемента
      */
     public static void exercise03() {
-
+        int[] array = new int[15];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random()*100);
+        }
+        System.out.println(Arrays.toString(array));
     }
 
     /**
      * Задача 4. Написать метод, который пригнимает массив и сортирует его методом выбора (селективная сортировка)
      */
     public static void exercise04() {
-
+        int[] array = new int[15];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random()*100);
+        }
+        System.out.println(Arrays.toString(array));
     }
 
     /**
@@ -48,10 +66,14 @@ public class Task7 {
      * исходного массива (четные значения)
      */
     public static void exercise05() {
-
+        int[] array = new int[20];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random()*100);
+        }
+        System.out.println(Arrays.toString(array));
     }
 
     public static void main(String[] args) {
-	// write your code here
+	exercise02();
     }
 }
