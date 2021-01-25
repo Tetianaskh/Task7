@@ -89,9 +89,9 @@ public class Task7 {
     }
 
     /**
-     *
-     * @param array
-     * @return
+     * Метод селективной сортировки массива
+     * @param array массив
+     * @return отсортированный массив
      */
     public static void selectiveSort (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
