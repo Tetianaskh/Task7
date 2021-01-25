@@ -36,9 +36,13 @@ public class Task7 {
         return randomArray;
     }
 
+    /**
+     * Поиск максимального элемента массива
+     * @param array массив
+     * @return максимальный элемент массива
+     */
     public static int searchMaxElement(int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
-        array = randomArray(array);
         int maxElement = 0;
         for (int i = 0; i < array.length; i++) {
             if (maxElement < array[i]) {
@@ -53,19 +57,18 @@ public class Task7 {
      */
     public static void exercise02() {
         System.out.println("Добрый день! Поиск максимального элемента массива: ");
-        int[] array = new int[5];
+        int[] array = new int[15];
         int maxElement = searchMaxElement(array);
         System.out.println("Максимальный елемент массива равен = " + maxElement);
     }
 
     /**
-     *
+     * Поик индекса минимального элемента массива
      * @param array массив
      * @return индекс минимального элемента массива
      */
     public static int minElementIndex(int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
-        array = randomArray(array);
         int minElementIndex = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < array[minElementIndex]) {
@@ -80,12 +83,13 @@ public class Task7 {
      */
     public static void exercise03() {
         System.out.println("Добрый день! Поиск индекса минимального элемента массива: ");
-        int[] array = new int[5];
+        int[] array = new int[10];
         int minIndex = minElementIndex(array);
         System.out.println("Индекс минимального елемента массива равен = " + minIndex);
     }
 
     public static void selectiveSort (int[] array) {
+        System.out.println(Arrays.toString(randomArray(array)));
 
     }
 
@@ -97,14 +101,33 @@ public class Task7 {
     }
 
     /**
+     * Выбор четных элементов массива
+     * @param array массив
+     * @return массив четных элементов
+     */
+    public static int[] selectOfEvenElements (int[] array) {
+        System.out.println(Arrays.toString(randomArray(array)));
+        int step = 0;
+        int[] arrayOfEvenElements = new int[] {};
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                arrayOfEvenElements[step++] = array[i];
+            }
+        }
+        return arrayOfEvenElements;
+    }
+    /**
      * Задача 5. Написать метод, который пригнимает массив и возвращает новый массив, содержащий только четные элементы
      * исходного массива (четные значения)
      */
     public static void exercise05() {
-
+        System.out.println("Добрый день! Выбор четных элементов из исходного массива: ");
+        int[] array = new int[20];
+        int[] arrayOfEvenElements = selectOfEvenElements(array);
+        System.out.println("Массив четных элементов = " + arrayOfEvenElements);
     }
 
     public static void main(String[] args) {
-        exercise03();
+        exercise05();
     }
 }
