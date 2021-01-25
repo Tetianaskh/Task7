@@ -88,6 +88,11 @@ public class Task7 {
         System.out.println("Индекс минимального елемента массива равен = " + minIndex);
     }
 
+    /**
+     *
+     * @param array
+     * @return
+     */
     public static void selectiveSort (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
 
