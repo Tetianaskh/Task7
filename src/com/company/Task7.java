@@ -22,43 +22,78 @@ public class Task7 {
 
     }
 
-//    public static int maxElement(int array, int element) {
-//
-//    }
+
+    /**
+     * Создание рандомного массива
+     * @param array массив
+     * @return рандомный массив
+     */
+    public static int[] randomArray(int[] array) {
+        int[] randomArray = array;
+        for (int i = 0; i < array.length; i++) {
+            randomArray[i] = (int) (Math.random()*100);
+        }
+        return randomArray;
+    }
+
+    public static int searchMaxElement(int[] array) {
+        System.out.println(Arrays.toString(randomArray(array)));
+        array = randomArray(array);
+        int maxElement = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (maxElement < array[i]) {
+                maxElement = array[i];
+            }
+        }
+        return maxElement;
+    }
+
     /**
      * Задача 2. Написать метод, который принимает массив целых чисел и возвращает значение максимального элемента
      */
     public static void exercise02() {
-        int[] array = new int[15];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random()*100);
-        }
-        System.out.println(Arrays.toString(array));
+        System.out.println("Добрый день! Поиск максимального элемента массива: ");
+        int[] array = new int[5];
+        int maxElement = searchMaxElement(array);
+        System.out.println("Максимальный елемент массива равен = " + maxElement);
     }
 
-//    public static int minElementIndex(int array, int element) {
-//
-//    }
+    /**
+     *
+     * @param array массив
+     * @return индекс минимального элемента массива
+     */
+    public static int minElementIndex(int[] array) {
+        System.out.println(Arrays.toString(randomArray(array)));
+        array = randomArray(array);
+        int minElementIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < array[minElementIndex]) {
+                minElementIndex = i;
+            }
+        }
+        return minElementIndex;
+    }
+
     /**
      * Задача 3. Написать метод, который пригнимает массив целых чисел и возвращает индекс минимального элемента
      */
     public static void exercise03() {
-        int[] array = new int[15];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random()*100);
-        }
-        System.out.println(Arrays.toString(array));
+        System.out.println("Добрый день! Поиск индекса минимального элемента массива: ");
+        int[] array = new int[5];
+        int minIndex = minElementIndex(array);
+        System.out.println("Индекс минимального елемента массива равен = " + minIndex);
+    }
+
+    public static void selectiveSort (int[] array) {
+
     }
 
     /**
      * Задача 4. Написать метод, который пригнимает массив и сортирует его методом выбора (селективная сортировка)
      */
     public static void exercise04() {
-        int[] array = new int[15];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random()*100);
-        }
-        System.out.println(Arrays.toString(array));
+
     }
 
     /**
@@ -66,14 +101,10 @@ public class Task7 {
      * исходного массива (четные значения)
      */
     public static void exercise05() {
-        int[] array = new int[20];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random()*100);
-        }
-        System.out.println(Arrays.toString(array));
+
     }
 
     public static void main(String[] args) {
-	exercise02();
+        exercise03();
     }
 }
