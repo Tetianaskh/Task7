@@ -108,7 +108,8 @@ public class Task7 {
     public static int[] selectOfEvenElements (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
         int step = 0;
-        int[] arrayOfEvenElements = new int[] {};
+        int[] arrayOfEvenElements;
+        arrayOfEvenElements = new int[] {};
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
                 arrayOfEvenElements[step++] = array[i];
@@ -116,6 +117,7 @@ public class Task7 {
         }
         return arrayOfEvenElements;
     }
+
     /**
      * Задача 5. Написать метод, который пригнимает массив и возвращает новый массив, содержащий только четные элементы
      * исходного массива (четные значения)
@@ -123,8 +125,7 @@ public class Task7 {
     public static void exercise05() {
         System.out.println("Добрый день! Выбор четных элементов из исходного массива: ");
         int[] array = new int[20];
-        int[] arrayOfEvenElements = selectOfEvenElements(array);
-        System.out.println("Массив четных элементов = " + arrayOfEvenElements);
+        System.out.println("Массив четных элементов = " + Arrays.toString(selectOfEvenElements(array)));
     }
 
     public static void main(String[] args) {
