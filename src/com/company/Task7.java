@@ -20,13 +20,13 @@ public class Task7 {
      * удалить этот элемент из массива.
      * После вывести список вновь
      */
-//    public static void exercise01(String[] args) {
-//        System.out.println("Добрый день! Список задач на сегодня:");
-//        String[] arrayOfTasks = {"1. Посмотреть видео", "2. Решить домашнее задание", "3. Получить оценку"};
-//        System.out.println(arrayOfTasks);
-//
-//
-//    }
+    public static void exercise01() {
+        System.out.println("Добрый день! Список задач на сегодня:");
+        String[] arrayOfTasks = {"1. Посмотреть видео", "2. Решить домашнее задание", "3. Получить оценку"};
+        for (int i = 0; i < arrayOfTasks.length; i++) {
+            System.out.println(arrayOfTasks[i]);
+        }
+    }
 
 
     /**
