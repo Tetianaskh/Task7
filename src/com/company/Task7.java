@@ -113,8 +113,7 @@ public class Task7 {
     public static int[] selectOfEvenElements (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
         int step = 0;
-        int[] arrayOfEvenElements;
-        arrayOfEvenElements = new int[] {};
+        int[] arrayOfEvenElements = new int[step];
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
                 arrayOfEvenElements[step++] = array[i];
