@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 
 public class Task7 {
@@ -18,9 +20,13 @@ public class Task7 {
      * удалить этот элемент из массива.
      * После вывести список вновь
      */
-    public static void exercise01() {
-
-    }
+//    public static void exercise01(String[] args) {
+//        System.out.println("Добрый день! Список задач на сегодня:");
+//        String[] arrayOfTasks = {"1. Посмотреть видео", "2. Решить домашнее задание", "3. Получить оценку"};
+//        System.out.println(arrayOfTasks);
+//
+//
+//    }
 
 
     /**
@@ -112,8 +118,14 @@ public class Task7 {
      */
     public static int[] selectOfEvenElements (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
+        int size = 0;
+        for (int el : array) {
+            if (el % 2 == 0) {
+              size++;
+            }
+        }
+        int[] arrayOfEvenElements = new int[size];
         int step = 0;
-        int[] arrayOfEvenElements = new int[step];
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
                 arrayOfEvenElements[step++] = array[i];
