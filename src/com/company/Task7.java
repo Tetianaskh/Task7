@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Task7 {
 
@@ -23,6 +24,22 @@ public class Task7 {
         String[] arrayOfTasks = {"1. Посмотреть видео", "2. Решить домашнее задание", "3. Получить оценку"};
         for (int i = 0; i < arrayOfTasks.length; i++) {
             System.out.println(arrayOfTasks[i]);
+        }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Вы хотите добавить задачу в список?");
+        String route = sc.nextLine();
+        int tasks;
+        if (route.equals("Да")) {
+            System.out.println("Введите текст добавляемой задачи:");
+            tasks = sc.nextInt();
+
+            for (int i = 0; i < arrayOfTasks.length; i++) {
+                System.out.println(arrayOfTasks[i]);
+            }
+        } else if (route.equals("Нет")) {
+            System.out.println("Введите номер задачи? который хотите удалить:");
+            tasks = sc.nextInt();
+
         }
     }
 
@@ -109,13 +126,22 @@ public class Task7 {
 
     }
 
+    public static void nullExclusion (int[] array) {
+        System.out.println(Arrays.toString(randomArray(array)));
+        for (int el : array) {
+            if (el == 0) {
+                break;
+            }
+        }
+    }
+
     /**
      * Выбор четных элементов массива
      * @param array массив
      * @return массив четных элементов
      */
     public static int[] selectOfEvenElements (int[] array) {
-        System.out.println(Arrays.toString(randomArray(array)));
+//        System.out.println(Arrays.toString(randomArray(array)));
         int size = 0;
         for (int el : array) {
             if (el % 2 == 0) {
@@ -143,6 +169,6 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        exercise05();
+        exercise01();
     }
 }
