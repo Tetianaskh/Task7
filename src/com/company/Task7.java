@@ -133,21 +133,38 @@ public class Task7 {
         System.out.println("Индекс минимального елемента массива равен = " + minIndex);
     }
 
+    public static int searchMinElement(int[] array) {
+        int minElement = 0;
+        int minElementIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (minElement > array[i]) {
+                minElement = array[i];
+            }
+        }
+        return minElement;
+    }
     /**
      * Метод селективной сортировки массива
      * @param array массив
      * @return отсортированный массив
      */
-    public static void selectiveSort (int[] array) {
+    public static int[] selectiveSort (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
-
+        for (int i = 0; i < array.length; i++) {
+            int buf = array[i];
+            array[i] = searchMinElement(array);
+            array[] = buf;
+        }
+        return array;
     }
 
     /**
      * Задача 4. Написать метод, который пригнимает массив и сортирует его методом выбора (селективная сортировка)
      */
     public static void exercise04() {
-
+        System.out.println("Добрый день! Наш помощник отсортирует исходный массив методом селективной сортировки: ");
+        int[] array = new int[10];
+        System.out.println("Отсортированный массив: " + selectiveSort(array));
     }
 
     /**
@@ -193,6 +210,6 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        exercise01();
+        exercise04();
     }
 }
