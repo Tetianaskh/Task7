@@ -1,13 +1,40 @@
 package com.company;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task7 {
 
     // Основные задачи:
+
+    /**
+     * Удаление элемена по индексу
+     * @param array исходный массив
+     * @param index индекс удаляемого элемента
+     * @return новый массив
+     */
+    public static String[] removeArrayElement(String[] array, int index) {
+        String[] array2 = new String[array.length - 1];
+        for (int i = 0; i < array2.length; i++) {
+            if (i < index) {
+                array2[i] = array[i];
+            } else {
+                array2[i] = array[i + 1];
+            }
+        }
+        return array2;
+    }
+
+    /**
+     * Печать списка задач
+     * @param arrayOfTasks список задач
+     */
+    private static void printTaskList(String[] arrayOfTasks) {
+        System.out.println("Список задач на сегодня:");
+        for (int i = 0; i < arrayOfTasks.length; i++) {
+            System.out.println(i+1 + ". " + arrayOfTasks[i]);
+        }
+    }
 
     /**
      * Задача 1. Создать массив задач (массив строк с текстом задач) вывести все задачи в виде списка с номерами,
@@ -22,23 +49,23 @@ public class Task7 {
      * После вывести список вновь
      */
     public static void exercise01() {
-        System.out.println("Добрый день! Список задач на сегодня:");
-        String[] arrayOfTasks = {"1. Посмотреть видео", "2. Решить домашнее задание", "3. Получить оценку"};
-        for (int i = 0; i < arrayOfTasks.length; i++) {
-            System.out.println(arrayOfTasks[i]);
-        }
+        System.out.println("Добрый день!");
+        String[] arrayOfTasks = {"Посмотреть видео", "Решить домашнее задание", "Получить оценку"};
+        printTaskList(arrayOfTasks);
         Scanner sc = new Scanner(System.in);
         System.out.println("Вы хотите добавить задачу в список?");
         if (sc.nextLine().equalsIgnoreCase("Да")) {
             System.out.println("Введите текст добавляемой задачи:");
             arrayOfTasks = Arrays.copyOf(arrayOfTasks, arrayOfTasks.length + 1);
             arrayOfTasks[arrayOfTasks.length - 1] = sc.nextLine();
-            System.out.println("Список задач на сегодня:");
-            for (int i = 0; i < arrayOfTasks.length; i++) {
-                System.out.println(arrayOfTasks[i]);
-            }
+            printTaskList(arrayOfTasks);
         }
-
+        System.out.println("Вы хотите удалить задачу из списка?");
+        if (sc.nextLine().equalsIgnoreCase("Да")) {
+            System.out.println("Введите номер удаляемой задачи:");
+            arrayOfTasks = removeArrayElement(arrayOfTasks, sc.nextInt() - 1);
+            printTaskList(arrayOfTasks);
+        }
     }
 
     /**
