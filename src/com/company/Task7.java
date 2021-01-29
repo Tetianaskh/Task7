@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -27,22 +29,17 @@ public class Task7 {
         }
         Scanner sc = new Scanner(System.in);
         System.out.println("Вы хотите добавить задачу в список?");
-        String route = sc.nextLine();
-        int tasks;
-        if (route.equals("Да")) {
+        if (sc.nextLine().equalsIgnoreCase("Да")) {
             System.out.println("Введите текст добавляемой задачи:");
-            tasks = sc.nextInt();
-
+            arrayOfTasks = Arrays.copyOf(arrayOfTasks, arrayOfTasks.length + 1);
+            arrayOfTasks[arrayOfTasks.length - 1] = sc.nextLine();
+            System.out.println("Список задач на сегодня:");
             for (int i = 0; i < arrayOfTasks.length; i++) {
                 System.out.println(arrayOfTasks[i]);
             }
-        } else if (route.equals("Нет")) {
-            System.out.println("Введите номер задачи? который хотите удалить:");
-            tasks = sc.nextInt();
-
         }
-    }
 
+    }
 
     /**
      * Создание рандомного массива
@@ -169,6 +166,6 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        exercise05();
+        exercise01();
     }
 }
