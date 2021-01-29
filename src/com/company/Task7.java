@@ -129,8 +129,8 @@ public class Task7 {
     public static void nullExclusion (int[] array) {
         System.out.println(Arrays.toString(randomArray(array)));
         for (int el : array) {
-            if (el == 0) {
-                break;
+            if (el != 0) {
+
             }
         }
     }
