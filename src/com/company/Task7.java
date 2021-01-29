@@ -135,7 +135,6 @@ public class Task7 {
 
     public static int searchMinElement(int[] array) {
         int minElement = 0;
-        int minElementIndex = 0;
         for (int i = 0; i < array.length; i++) {
             if (minElement > array[i]) {
                 minElement = array[i];
@@ -143,6 +142,17 @@ public class Task7 {
         }
         return minElement;
     }
+
+    public static int minIndex(int[] array) {
+        int minElementIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < array[minElementIndex]) {
+                minElementIndex = i;
+            }
+        }
+        return minElementIndex;
+    }
+
     /**
      * Метод селективной сортировки массива
      * @param array массив
@@ -153,7 +163,7 @@ public class Task7 {
         for (int i = 0; i < array.length; i++) {
             int buf = array[i];
             array[i] = searchMinElement(array);
-            array[] = buf;
+            array[minIndex(array)] = buf;
         }
         return array;
     }
@@ -210,6 +220,6 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        exercise04();
+        exercise01();
     }
 }
