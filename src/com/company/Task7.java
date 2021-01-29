@@ -126,13 +126,13 @@ public class Task7 {
 
     }
 
-    public static void nullExclusion (int[] array) {
-        System.out.println(Arrays.toString(randomArray(array)));
-        for (int el : array) {
-            if (el != 0) {
-
-            }
-        }
+    /**
+     * Проверка числа: - деление на 2 без остатка; - число не равно 0
+     * @param num число
+     * @return проверка числа
+     */
+    public static boolean isEven (int num) {
+        return num % 2 == 0 && num != 0;
     }
 
     /**
@@ -141,17 +141,17 @@ public class Task7 {
      * @return массив четных элементов
      */
     public static int[] selectOfEvenElements (int[] array) {
-//        System.out.println(Arrays.toString(randomArray(array)));
+        System.out.println(Arrays.toString(randomArray(array)));
         int size = 0;
         for (int el : array) {
-            if (el % 2 == 0) {
+            if (isEven(el)) {
               size++;
             }
         }
         int[] arrayOfEvenElements = new int[size];
         int step = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
+            if (isEven(array[i])) {
                 arrayOfEvenElements[step++] = array[i];
             }
         }
@@ -169,6 +169,6 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        exercise01();
+        exercise05();
     }
 }
