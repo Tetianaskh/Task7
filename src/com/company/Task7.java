@@ -63,15 +63,16 @@ public class Task7 {
         System.out.println("Вы хотите удалить задачу из списка?");
         if (sc.nextLine().equalsIgnoreCase("Да")) {
             System.out.println("Введите номер удаляемой задачи:");
-            arrayOfTasks = removeArrayElement(arrayOfTasks, sc.nextInt() - 1);
+            int numberDeleteTask = sc.nextInt();
+            while (numberDeleteTask > arrayOfTasks.length) {
+                System.out.println("Такого номера задачи нет, попробуйте еще =)");
+                System.out.println("Введите номер удаляемой задачи:");
+                sc.nextInt();
+            }
+            arrayOfTasks = removeArrayElement(arrayOfTasks, numberDeleteTask - 1);
             printTaskList(arrayOfTasks);
         }
     }
-
-//    if (sc.nextInt() - 1 > arrayOfTasks.length) {
-//        System.out.println("Такого номера задачи нет, попробуйте еще =)");
-//        System.out.println("Введите номер удаляемой задачи:");
-//    }
 
     /**
      * Создание рандомного массива
