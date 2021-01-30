@@ -68,6 +68,11 @@ public class Task7 {
         }
     }
 
+//    if (sc.nextInt() - 1 > arrayOfTasks.length) {
+//        System.out.println("Такого номера задачи нет, попробуйте еще =)");
+//        System.out.println("Введите номер удаляемой задачи:");
+//    }
+
     /**
      * Создание рандомного массива
      * @return рандомный массив
@@ -199,6 +204,6 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        exercise04();
+        exercise01();
     }
 }
