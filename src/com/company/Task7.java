@@ -70,15 +70,14 @@ public class Task7 {
 
     /**
      * Создание рандомного массива
-     * @param array массив
      * @return рандомный массив
      */
-    public static int[] randomArray(int[] array) {
-        int[] randomArray = array;
+    public static int[] getRandomArray(int size) {
+        int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            randomArray[i] = (int) (Math.random()*100);
+            array[i] = (int) (Math.random()*100);
         }
-        return randomArray;
+        return array;
     }
 
     /**
@@ -87,7 +86,6 @@ public class Task7 {
      * @return максимальный элемент массива
      */
     public static int searchMaxElement(int[] array) {
-        System.out.println(Arrays.toString(randomArray(array)));
         int maxElement = 0;
         for (int i = 0; i < array.length; i++) {
             if (maxElement < array[i]) {
@@ -102,7 +100,8 @@ public class Task7 {
      */
     public static void exercise02() {
         System.out.println("Добрый день! Поиск максимального элемента массива: ");
-        int[] array = new int[15];
+        int[] array = getRandomArray(15);
+        System.out.println(Arrays.toString(array));
         int maxElement = searchMaxElement(array);
         System.out.println("Максимальный елемент массива равен = " + maxElement);
     }
@@ -113,7 +112,6 @@ public class Task7 {
      * @return индекс минимального элемента массива
      */
     public static int minElementIndex(int[] array) {
-        System.out.println(Arrays.toString(randomArray(array)));
         int minElementIndex = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < array[minElementIndex]) {
@@ -128,29 +126,10 @@ public class Task7 {
      */
     public static void exercise03() {
         System.out.println("Добрый день! Поиск индекса минимального элемента массива: ");
-        int[] array = new int[10];
+        int[] array = getRandomArray(10);
+        System.out.println(Arrays.toString(array));
         int minIndex = minElementIndex(array);
         System.out.println("Индекс минимального елемента массива равен = " + minIndex);
-    }
-
-    public static int searchMinElement(int[] array) {
-        int minElement = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (minElement > array[i]) {
-                minElement = array[i];
-            }
-        }
-        return minElement;
-    }
-
-    public static int searchminIndex(int[] array) {
-        int minElementIndex = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < array[minElementIndex]) {
-                minElementIndex = i;
-            }
-        }
-        return minElementIndex;
     }
 
     /**
@@ -159,11 +138,10 @@ public class Task7 {
      * @return отсортированный массив
      */
     public static int[] selectiveSort (int[] array) {
-        System.out.println(Arrays.toString(randomArray(array)));
         for (int i = 0; i < array.length; i++) {
             int buf = array[i];
-            array[i] = searchMinElement(array);
-            array[searchminIndex(array)] = buf;
+            array[i] = array[minElementIndex(array)];
+            array[minElementIndex(array)] = buf;
         }
         return array;
     }
@@ -173,7 +151,8 @@ public class Task7 {
      */
     public static void exercise04() {
         System.out.println("Добрый день! Наш помощник отсортирует исходный массив методом селективной сортировки: ");
-        int[] array = new int[10];
+        int[] array = getRandomArray(20);
+        System.out.println(Arrays.toString(array));
         System.out.println("Отсортированный массив: " + selectiveSort(array));
     }
 
@@ -192,7 +171,6 @@ public class Task7 {
      * @return массив четных элементов
      */
     public static int[] selectOfEvenElements (int[] array) {
-        System.out.println(Arrays.toString(randomArray(array)));
         int size = 0;
         for (int el : array) {
             if (isEven(el)) {
@@ -215,11 +193,12 @@ public class Task7 {
      */
     public static void exercise05() {
         System.out.println("Добрый день! Выбор четных элементов из исходного массива: ");
-        int[] array = new int[20];
+        int[] array = getRandomArray(30);
+        System.out.println(Arrays.toString(array));
         System.out.println("Массив четных элементов = " + Arrays.toString(selectOfEvenElements(array)));
     }
 
     public static void main(String[] args) {
-        exercise01();
+        exercise04();
     }
 }
