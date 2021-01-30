@@ -112,8 +112,8 @@ public class Task7 {
      * @return индекс минимального элемента массива
      */
     public static int minElementIndex(int[] array, int startIndex) {
-        int minElementIndex = 0;
-        for (int i = startIndex; i < array.length; i++) {
+        int minElementIndex = startIndex;
+        for (int i = startIndex + 1; i < array.length; i++) {
             if (array[i] < array[minElementIndex]) {
                 minElementIndex = i;
             }
@@ -136,7 +136,7 @@ public class Task7 {
      * Метод селективной сортировки массива
      * @param array массив
      */
-    public static void sort(int[] array) {
+    public static void makeSelectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int minElementIndex = minElementIndex(array, i);
             int buf = array[i];
@@ -150,9 +150,9 @@ public class Task7 {
      */
     public static void exercise04() {
         System.out.println("Добрый день! Наш помощник отсортирует исходный массив методом селективной сортировки: ");
-        int[] array = getRandomArray(5);
+        int[] array = getRandomArray(20);
         System.out.println(Arrays.toString(array));
-        sort(array);
+        makeSelectionSort(array);
         System.out.println("Отсортированный массив: " + Arrays.toString(array));
     }
 
