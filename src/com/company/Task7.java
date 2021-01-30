@@ -143,7 +143,7 @@ public class Task7 {
         return minElement;
     }
 
-    public static int minIndex(int[] array) {
+    public static int searchminIndex(int[] array) {
         int minElementIndex = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < array[minElementIndex]) {
@@ -163,7 +163,7 @@ public class Task7 {
         for (int i = 0; i < array.length; i++) {
             int buf = array[i];
             array[i] = searchMinElement(array);
-            array[minIndex(array)] = buf;
+            array[searchminIndex(array)] = buf;
         }
         return array;
     }
