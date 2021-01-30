@@ -63,13 +63,13 @@ public class Task7 {
         System.out.println("Вы хотите удалить задачу из списка?");
         if (sc.nextLine().equalsIgnoreCase("Да")) {
             System.out.println("Введите номер удаляемой задачи:");
-            int numberDeleteTask = sc.nextInt();
-            while (numberDeleteTask > arrayOfTasks.length || numberDeleteTask <= 0) {
+            int deleteTaskNumber = sc.nextInt();
+            while (deleteTaskNumber > arrayOfTasks.length || deleteTaskNumber < 1) {
                 System.out.println("Такого номера задачи нет, попробуйте еще =)");
                 System.out.println("Введите номер удаляемой задачи:");
-                numberDeleteTask = sc.nextInt();
+                deleteTaskNumber = sc.nextInt();
             }
-            arrayOfTasks = removeArrayElement(arrayOfTasks, numberDeleteTask - 1);
+            arrayOfTasks = removeArrayElement(arrayOfTasks, deleteTaskNumber - 1);
             printTaskList(arrayOfTasks);
         }
     }
