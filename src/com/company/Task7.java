@@ -206,5 +206,9 @@ public class Task7 {
 
     public static void main(String[] args) {
         exercise01();
+        exercise02();
+        exercise03();
+        exercise04();
+        exercise05();
     }
 }
