@@ -136,7 +136,7 @@ public class Task7 {
      * Метод селективной сортировки массива
      * @param array массив
      */
-    public static void makeSelectionSort(int[] array) {
+    public static void applySelectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int minElementIndex = minElementIndex(array, i);
             int buf = array[i];
@@ -152,7 +152,7 @@ public class Task7 {
         System.out.println("Добрый день! Наш помощник отсортирует исходный массив методом селективной сортировки: ");
         int[] array = getRandomArray(20);
         System.out.println(Arrays.toString(array));
-        makeSelectionSort(array);
+        applySelectionSort(array);
         System.out.println("Отсортированный массив: " + Arrays.toString(array));
     }
 
